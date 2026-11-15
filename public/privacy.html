@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0d1c" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet" />
+    <title>Privacy &amp; Terms · Movie Tracker</title>
+    <style>
+      /* Standalone page: these mirror the tokens at the top of src/styles.css. */
+      :root {
+        --bg: #0a0d1c;
+        --surface: #131830;
+        --line: #283056;
+        --text: #f1f3ff;
+        --body: #c9cfea;
+        --muted: #98a1c8;
+        --accent: #ff5277;
+        --grad: linear-gradient(120deg, #ff3d77 0%, #ff6a4d 55%, #ffa23f 100%);
+        --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+        --sans: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color-scheme: dark;
+      }
+      * { box-sizing: border-box; }
+      html { background: var(--bg); -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        padding: calc(28px + env(safe-area-inset-top, 0px)) 16px calc(56px + env(safe-area-inset-bottom, 0px));
+        font: 17px/1.6 var(--sans);
+        color: var(--body);
+      }
+      main { max-width: 680px; margin: 0 auto; }
+      .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font: 700 22px/1 var(--display); text-transform: uppercase; letter-spacing: 0.03em; }
+      .brand img { width: 34px; height: 34px; border-radius: 9px; }
+      h1, h2 { font-family: var(--display); text-transform: uppercase; color: var(--text); line-height: 1.05; letter-spacing: 0.01em; }
+      h1 { font-size: clamp(38px, 9vw, 56px); margin: 36px 0 6px; }
+      h1 span { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      h2 { font-size: 26px; margin: 40px 0 8px; }
+      p, ul { margin: 0 0 14px; }
+      ul { padding-left: 20px; }
+      li { margin-bottom: 6px; }
+      b { color: var(--text); font-weight: 600; }
+      a { color: var(--accent); }
+      .updated { color: var(--muted); font-size: 15px; }
+      .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; margin: 22px 0; }
+      .card p:last-child { margin-bottom: 0; }
+      hr { border: 0; border-top: 1px solid var(--line); margin: 44px 0 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="brand" href="/"><img src="/icon.svg" alt="" />Movie Tracker</a>
+
+      <h1>Privacy <span>&amp; Terms</span></h1>
+      <p class="updated">Last updated 15 November 2026</p>
+
+      <div class="card">
+        <p>
+          Movie Tracker is a small, free, non-commercial app run by one person for friends. It keeps the films and series
+          you save, and the little it needs to sign you in. There are no ads, no analytics and no tracking, and nothing is
+          sold or shared for marketing.
+        </p>
+      </div>
+
+      <h2>What is stored</h2>
+      <ul>
+        <li><b>Your account:</b> email address, username, and the date you joined.</li>
+        <li><b>Your password:</b> only as a salted one-way hash. The password itself is never stored and cannot be read by anyone.</li>
+        <li><b>If you use Sign in with Google:</b> your Google account ID, name, email address and profile picture link. Nothing else is requested from Google, and the app cannot see your Google password, mail, contacts or files.</li>
+        <li><b>Your lists:</b> the titles you add, whether you watched or favourited them, the shelf you chose, your star ratings and your notes.</li>
+        <li><b>Sign-in sessions:</b> a hashed token for each device you are signed in on, and when it expires.</li>
+      </ul>
+
+      <h2>How it is used</h2>
+      <p>
+        Only to run the app: to sign you in, to show your own lists on your devices, and to email you a link when you
+        confirm your address or reset your password. Your lists, ratings and notes are private to your account; other
+        users cannot see them.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        One essential cookie keeps you signed in. It lasts up to 30 days from your last visit and never longer than
+        180 days. A short-lived cookie is used while Sign in with Google is in progress. There are no advertising or
+        tracking cookies.
+      </p>
+
+      <h2>Services the app relies on</h2>
+      <ul>
+        <li><b>Cloudflare</b> hosts the app and its database, and sees your IP address as any web host does. It is also used to limit abusive traffic.</li>
+        <li><b>Brevo</b> delivers the confirmation and password-reset emails, so it receives your email address for that purpose.</li>
+        <li><b>Google</b> is involved only if you choose Sign in with Google.</li>
+        <li><b>TMDB</b> provides film and series information. Your searches are sent to TMDB by the app's server without your identity, and posters load from TMDB's image servers.</li>
+        <li><b>Google Fonts</b> serves the typefaces.</li>
+      </ul>
+
+      <h2>Keeping and deleting</h2>
+      <p>
+        Your data is kept for as long as your account exists. You can delete your account at any time from
+        <b>Profile → Delete account</b>; this immediately and permanently removes your account, sessions, lists, ratings
+        and notes. To stop Google sign-in, you can also remove Movie Tracker in your Google account's third-party access
+        settings.
+      </p>
+
+      <h2>Questions</h2>
+      <p>
+        Ask the person who shared the app with you, or write to the support email shown on the Google sign-in screen for
+        Movie Tracker.
+      </p>
+
+      <h2>Terms of use</h2>
+      <ul>
+        <li>The app is provided free and as it is, with no guarantee that it will always be available or that data will never be lost.</li>
+        <li>Use it for keeping your own watchlist. Don't try to break it, overload it, or get into someone else's account.</li>
+        <li>Accounts that abuse the service may be removed.</li>
+        <li>This product uses the TMDB API but is not endorsed or certified by TMDB.</li>
+      </ul>
+
+      <hr />
+      <p style="margin-top: 20px"><a href="/">← Back to Movie Tracker</a></p>
+    </main>
+  </body>
+</html>
