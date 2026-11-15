@@ -1,4 +1,4 @@
-![](Images/desktop_sign_in.jpg)
+![](Images/banner.jpg)
 
 # Movie Tracker
 
@@ -64,12 +64,27 @@ The same app on a wide screen, with a sidebar instead of the bottom tab bar.
 
 ## Technical Background
 
-- **Movie Tracker** is made with **React 19**, **TypeScript** and **Vite**. Styling is plain **CSS**, without any UI library or router library.
-- Backend is a single **Cloudflare Worker**, which also serves the static files.
-- **Cloudflare D1** (SQLite) is used as database.
-- **"The Movie Database" (TMDB)** is used for API calls.
-- **Google OAuth 2.0** is used for Sign in with Google, and **Brevo** for sending emails.
-- **View Transitions API** is used for the poster animation between a list and its detail sheet.
+| Technology | Used for |
+| --- | --- |
+| **React 19** | All screens and components of the app (home, shelves, detail sheet, sign-in, profile). |
+| **TypeScript** | The whole codebase, frontend and backend, with shared types for titles and users. |
+| **Vite** | Dev server and production build of the frontend. |
+| **Plain CSS** | All styling, with colours and fonts kept as CSS variables. No UI library is used. |
+| **Cloudflare Workers** | Backend. One Worker handles every `/api/*` request and also serves the built website. |
+| **Cloudflare D1 (SQLite)** | Database for users, sessions, email tokens and each user's saved titles, ratings and notes. |
+| **Cloudflare Rate Limiting** | Limits requests per visitor to protect the API and the sign-in endpoints. |
+| **Wrangler** | Running the Worker and database locally, storing secrets and deploying. |
+| **TMDB API** | Search, title details, cast, trailers, posters and weekly trending. Called only from the Worker. |
+| **Web Crypto API** | Password hashing (PBKDF2-SHA256), random tokens and token hashing inside the Worker. |
+| **Google OAuth 2.0** | "Continue with Google" sign-in. |
+| **Brevo** | Sending the email confirmation and password reset emails. |
+| **View Transitions API** | Poster animation between a list and its detail sheet. |
+| **History API** | Small hash router written by hand, so the back button and back gesture close a detail sheet. |
+| **localStorage** | Cached copy of the user's list, so the app opens instantly before the server answers. |
+| **Google Fonts** | Barlow and Barlow Condensed typefaces. |
+
+- Saving is **optimistic**: the screen updates immediately, then the change is sent to the server, and it is rolled back with a message if the request fails.
+- The app is **mobile first** and respects **reduced motion** settings.
 - Everything runs on **free tiers**.
 
 ## Running Locally
